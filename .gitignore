@@ -1,0 +1,43 @@
+
+# Binaries for programs and plugins
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.tgz
+bin
+testbin/*
+Dockerfile.cross
+
+
+# Test binary, build with `go test -c`
+*.test
+
+# Output of the go coverage tool, specifically when used with LiteIDE
+*.out
+
+# Kubernetes Generated files - skip generated files, except for vendored files
+
+!vendor/**/zz_generated.*
+
+tmp/
+data/
+# editor and IDE paraphernalia
+.idea
+*.iml
+tags
+filenametags
+*.swp
+*.swo
+*~
+
+.DS_Store
+# VSCode
+.vscode/
+
+# ginkgo test coverage
+*.coverprofile
+coverage.txt
+coverage.out
+coverage.html
