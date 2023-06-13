@@ -27,7 +27,7 @@ appendReleaseSuffix: false
 controllerManager:
   serviceAccount: "monosql-operator-sa"
   image:
-    repository: monographdb/monosql-operator:v1.0.0-nightly
+    repository: monographdb/monosql-operator
     tag: v1.0.0-nightly
     pullPolicy: IfNotPresent
   ## In case the above image is pulled from a registry that requires
