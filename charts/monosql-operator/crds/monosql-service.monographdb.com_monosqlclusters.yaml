@@ -118,7 +118,7 @@ spec:
                   false'
                 type: boolean
               enablePerformance:
-                default: "ON"
+                default: "OFF"
                 description: 'Enable performance Default: ON'
                 type: string
               externalIps:
@@ -127,7 +127,7 @@ spec:
                   type: string
                 type: array
               image:
-                description: Image of the MonographDB component.  (Log/Tx)
+                description: Image of the MonoSQL component.
                 type: string
               imagePullPolicy:
                 default: IfNotPresent
@@ -253,6 +253,12 @@ spec:
                 description: 'The SQL Port number Default: 3306'
                 format: int32
                 type: integer
+              sqsQueueName:
+                description: SqsQueueName is used to communicate between MonoSQL nodes
+                  and currently relies on AWS SQS capabilities. Currently only used
+                  in Reload ACL Cache, e.g., to notify each other when execute FLUSH
+                  PRIVILEGES.
+                type: string
               tolerations:
                 description: If specified, the pod's tolerations.
                 items:
@@ -467,6 +473,7 @@ spec:
             required:
             - dynamo
             - image
+            - sqsQueueName
             type: object
           status:
             description: MonoSQLClusterStatus defines the observed state of MonoSQLCluster
