@@ -91,7 +91,7 @@ spec:
                       type: object
                     type: array
                   defaultCredential:
-                    default: "OFF"
+                    default: "ON"
                     description: Whether to enable default credentials for AWS. https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-files.html
                     type: string
                   endPoint:
@@ -119,7 +119,7 @@ spec:
                 type: boolean
               enablePerformance:
                 default: "OFF"
-                description: 'Enable performance Default: ON'
+                description: 'Enable performance Default: OFF'
                 type: string
               externalIps:
                 description: Specify external Ip
@@ -158,18 +158,20 @@ spec:
                 description: MonoSQL keyspace of DynamoDB
                 type: string
               maxConnection:
-                default: 500
+                default: 1000
                 description: 'The maximum number of client connections for single
-                  MonoSQLServer instance Default: 500'
+                  MonoSQLServer instance Default: 1000'
                 format: int32
                 type: integer
               maxUnavailable:
-                default: 1
-                description: The maximum number of pods that can be unavailable during
+                anyOf:
+                - type: integer
+                - type: string
+                default: 20%
+                description: 'The maximum number of pods that can be unavailable during
                   a rolling update. This number is set in the PodDistruptionBudget
-                  and defaults to 1.
-                format: int32
-                type: integer
+                  and defaults to 1. Default: 20%'
+                x-kubernetes-int-or-string: true
               nodeSelector:
                 additionalProperties:
                   type: string
@@ -242,7 +244,10 @@ spec:
               rollingUpdate:
                 default: rollingUpdate
                 description: 'RollingUpdate is the type of upgrade strategies used
-                  in MonographDB. Default: RollingUpdate'
+                  in MonographDB. Default: rollingUpdate'
+                enum:
+                - rollingUpdate
+                - onDelete
                 type: string
               serviceAccount:
                 description: MonoSQL operator serviceAccount (Authorization to access
