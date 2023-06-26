@@ -40,6 +40,12 @@ spec:
           spec:
             description: MonoSQLClusterSpec defines the desired state of MonoSQLCluster
             properties:
+              annotations:
+                additionalProperties:
+                  type: string
+                description: (Optional) Annotations of the MonoSQL cluster will be
+                  added to all MonoSQL instances.
+                type: object
               dnsConfig:
                 description: Specifies the DNS parameters of a pod.
                 properties:

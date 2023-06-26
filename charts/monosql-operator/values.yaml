@@ -14,7 +14,7 @@ controllerManager:
   serviceAccount: "monosql-operator-sa"
   image:
     repository: monographdb/monosql-operator
-    tag: v0.2.0-nightly
+    tag: v1.0.0
     pullPolicy: IfNotPresent
   ## In case the above image is pulled from a registry that requires
   ## authentication, a secret containining credentials can be added
