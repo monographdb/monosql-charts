@@ -2,6 +2,25 @@ apiVersion: v1
 entries:
   monosql-operator:
   - apiVersion: v1
+    appVersion: 1.0.1
+    created: "2023-06-30T08:19:46.604081015Z"
+    description: monosql-operator Helm chart for Kubernetes
+    digest: d0347925331caf6563896de30034a4ad7a4a5937a5f52a05cbaf689554041d59
+    keywords:
+    - database
+    - newsql
+    - mariadb
+    - mysql
+    - operator
+    - dynamodb
+    maintainers:
+    - email: hljpzz1982@163.com
+      name: pangzhenzhou
+    name: monosql-operator
+    urls:
+    - https://github.com/monographdb/monograph-charts/releases/download/monosql-operator-1.0.1/monosql-operator-1.0.1.tgz
+    version: 1.0.1
+  - apiVersion: v1
     appVersion: 1.0.0
     created: "2023-06-26T09:46:25.17070458Z"
     description: monosql-operator Helm chart for Kubernetes
@@ -58,4 +77,4 @@ entries:
     urls:
     - https://github.com/monographdb/monograph-charts/releases/download/monosql-operator-0.1.0/monosql-operator-0.1.0.tgz
     version: 0.1.0
-generated: "2023-06-26T09:46:25.17072148Z"
+generated: "2023-06-30T08:19:46.604097615Z"
