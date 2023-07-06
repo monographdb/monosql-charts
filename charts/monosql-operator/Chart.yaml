@@ -1,8 +1,8 @@
 apiVersion: v1
 name: monosql-operator
 description: monosql-operator Helm chart for Kubernetes
-version: 1.0.2 
-appVersion: "1.0.2"
+version: 1.2.2 
+appVersion: "1.2.2"
 keywords:
   - database
   - newsql
